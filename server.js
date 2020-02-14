@@ -3,9 +3,14 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const users = require("./routes/api/users");
+var cors = require('cors');
+
+
 
 const app = express();
 
+//allow remote origin
+app.use(cors());
 // Bodyparser middleware
 app.use(
     bodyParser.urlencoded({
