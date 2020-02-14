@@ -12,11 +12,6 @@ const app = express();
 //allow remote origin
 app.use(cors());
 
-app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
 
 
 // Bodyparser middleware
@@ -26,6 +21,12 @@ app.use(
     })
 );
 app.use(bodyParser.json());
+
+//allow remote origin
+app.use(cors());
+
+
+
 
 // DB Config
 //const db = require("./config/keys").mongoURI;
