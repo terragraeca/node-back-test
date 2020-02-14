@@ -7,6 +7,18 @@ const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");// Load User model
 const User = require("../../models/User");
 
+router.options('/login', function (req, res) {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader('Access-Control-Allow-Methods', '*');
+    res.setHeader("Access-Control-Allow-Headers", "*");
+    res.end();
+});
+router.options('/register', function (req, res) {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader('Access-Control-Allow-Methods', '*');
+    res.setHeader("Access-Control-Allow-Headers", "*");
+    res.end();
+});
 // @route POST api/users/register
 // @desc Register user
 // @access Public
